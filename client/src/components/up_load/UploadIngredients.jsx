@@ -51,7 +51,6 @@ const UploadIngredients = () => {
 
     setName('');
     setQ('');
-    setU('');
     setIsCustom(false);
     setCurrentFoodPart('');
   }
@@ -61,6 +60,8 @@ const UploadIngredients = () => {
   }
 
   const checkReqments = () => {
+    console.log(u);
+    
     const areMet = (
       category !== 'New Food Part' && (currentFoodPart === 'New Food Part' && category !== '') || (currentFoodPart !== 'New Food Part')
     )
@@ -106,7 +107,7 @@ const UploadIngredients = () => {
           </div>
           <SubmitBtn errorNoInput={errorNoInput} addIngredient={addIngredient} checkReqments={checkReqments} />
         </div>
-        <IngredientDisplay foodParts={foodParts} selectedIngredients={selectedIngredients} />
+        <IngredientDisplay foodParts={foodParts} setFoodParts={setFoodParts} selectedIngredients={selectedIngredients} setSelectedIngredients={setSelectedIngredients} setCurrentFoodPart={setCurrentFoodPart} setU={setU} setCategory={setCategory}/>
       </div>
     </div>
   );
