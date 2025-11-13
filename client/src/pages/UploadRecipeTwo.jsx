@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import UploadIngredients from "../components/up_load/UploadIngredients";
 import PageTitle from "../components/ui/PageTitle";
-import Dexie from "dexie";
 
 const UploadRecipeTwo = () => {
   return (  

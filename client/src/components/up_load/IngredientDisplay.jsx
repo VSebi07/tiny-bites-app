@@ -1,7 +1,7 @@
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const IngredientDisplay = ({foodParts, setFoodParts, selectedIngredients, setSelectedIngredients, setCurrentFoodPart, setU, setCategory}) => {
+const IngredientDisplay = ({foodParts, setFoodParts, selectedIngredients, setSelectedIngredients, setCurrentFoodPart, setCategory}) => {
   const deleteItem = (item) => {
     setSelectedIngredients(items => items.filter(i => i !== item));
   }

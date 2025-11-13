@@ -16,6 +16,7 @@ import { FilterProvider } from "./contexts/SelectedPlusIngsContext";
 import OneRecipe from "./pages/OneRecipe";
 import { AnimatePresence } from "framer-motion";
 import UploadRecipeTwo from "./pages/UploadRecipeTwo";
+import UploadRecipeThree from "./pages/UploadRecipeThree";
 import NotFound from "./pages/404";
 import { CategoryProvider } from "./contexts/CategoryContext";
 
@@ -39,6 +40,7 @@ function App() {
                 } />
               <Route path="/upload/basics" element={<UploadRecipe />} />
               <Route path="/upload/ingredients" element={<UploadRecipeTwo />} />
+              <Route path="/upload/steps" element={<UploadRecipeThree />} />
               <Route path="/recipes/all" element={
                 <FilterProvider>
                   <AllRecipes />
@@ -46,7 +48,6 @@ function App() {
                 } />
               <Route path="/recipes/categories" element={<Categories />} />
               <Route path="/recipes/:name" element={<OneRecipe />}/>
-              {/* <Route path="/404" element={<NotFound />} /> */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimatePresence> 
