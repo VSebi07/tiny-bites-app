@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import NotFoundContent from "../components/not_found/NotFoundContent";
+import NotFoundContent from "../components/notFoundPage/NotFoundContent";
 
 const NotFound = () => {
   document.querySelector('title').textContent = 'Not Found';

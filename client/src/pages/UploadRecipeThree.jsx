@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import PageTitle from "../components/ui/PageTitle";
-import UploadSteps from "../components/up_load/UploadSteps";
+import UploadSteps from "../components/uploadPage/UploadSteps";
 
 const UploadRecipeThree = () => {
   return (  
     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 100 }}
+      initial={{ opacity: 0, y: 0, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen">
+      className="h-screen lg:overflow-hidden">
       <PageTitle title="Upload Recipe" />
       <UploadSteps />
     </motion.div>

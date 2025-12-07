@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { RecipesContext } from "../contexts/RecipeContext";
-import FilterPageContent from "../components/filter/FilterPageContent";
+import FilterPageContent from "../components/filterPage/FilterPageContent";
 import Loading from "../components/ui/Loading";
 
 const AllRecipes = () => {

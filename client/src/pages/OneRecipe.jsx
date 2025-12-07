@@ -3,9 +3,9 @@ import { RecipesContext } from "../contexts/RecipeContext";
 import { useParams } from "react-router-dom";
 import transformName from "../functions/transformName";
 import { motion } from "framer-motion";
-import RecipeContent from "../components/one_recipe/RecipeContent";
+import RecipeContent from "../components/oneRecipePage/RecipeContent";
 import Loading from "../components/ui/Loading";
-import NotFoundContent from "../components/not_found/NotFoundContent";
+import NotFoundContent from "../components/notFoundPage/NotFoundContent";
 
 const OneRecipe = () => {
   const name = useParams().name;

@@ -1,7 +1,7 @@
 import { RecipesContext } from "../contexts/RecipeContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
-import ExploreContent from "../components/explore/ExploreContent";
+import ExploreContent from "../components/explorePage/ExploreContent";
 import Loading from "../components/ui/Loading";
 
 const Recipes = () => {

@@ -18,7 +18,7 @@ const recipeSchema = new mongoose.Schema({
         required: true,
         unique: [true, 'You have duplicate ingredients with the same name. Please select each ingredient only once.']
       },
-      qua: {
+      quantity: {
         type: Number,
         required: true,
         min: 0.1
@@ -35,7 +35,7 @@ const recipeSchema = new mongoose.Schema({
     min: 1
   },
   steps: {
-    type: [String],
+    type: [Object],
     validate: {
       validator: (v) => {
         return Array.isArray(v) && v.length > 0;
@@ -46,11 +46,9 @@ const recipeSchema = new mongoose.Schema({
   },
   author: {
     type: String,
-    required: true
   },
   authorImage: {
     type: String,
-    required: true
   },
   desc: {
     type: String,
@@ -58,7 +56,7 @@ const recipeSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true
+    // required: true
   },
   categories: {
     type: [String],
@@ -73,17 +71,17 @@ const recipeSchema = new mongoose.Schema({
   time: {
     qua: {
       type: Number,
-      required: true,
+      // required: true,
       min: 1
     },
     unit: {
       type: String,
-      required: true
+      // required: true
     }
   },
   diff: {
     type: String,
-    required: true
+    // required: true
   },
   likes: {
     type: Number,

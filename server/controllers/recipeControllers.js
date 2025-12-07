@@ -29,8 +29,42 @@ const showRecipe = async (req, res) => {
   res.status(200).json(recipe);    
 }
 
+const updateRecipe = async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log(req.body);
+    console.log(id);
+    
+
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(404).json({ error: 'This recipe could not be found.' })
+    }
+
+    // assuming the image string is in req.body.image
+    const { image } = req.body;
+    console.log(image);
+    
+
+    const recipe = await Recipe.findByIdAndUpdate(
+      id,
+      { image: image },      // <- this is what you're adding/updating
+      { new: true }           // <- return the updated document
+    )
+
+    if (!recipe) {
+      return res.status(404).json({ error: 'Recipe not found' })
+    }
+
+    res.status(200).json(recipe)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
+
 module.exports = {
   addRecipe,
   showAllRecipes,
-  showRecipe
+  showRecipe,
+  updateRecipe
 }

@@ -38,7 +38,7 @@ app.use('/api/category', categoryRoutes);
 
 app.post('/api/upload', upload.single('image'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No file uploaded!' });
-  const filePath = `/uploads/${req.file.filename}`;
+  const filePath = `/${req.file.filename}`;
   res.status(200).json({ path: filePath });
 });
 
@@ -58,7 +58,7 @@ app.post('/api/unit', async (req, res) => {
   } catch (e) {
     res.status(400).json({error: e.message})
   }
-})
+});
 
 
 /* DB CONNECTION */
