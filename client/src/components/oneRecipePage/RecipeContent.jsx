@@ -59,7 +59,7 @@ const RecipeContent = ({currentRecipe, currentServings, setCurrentServings}) => 
                   <div className="min-w-10 lg:min-w-15 rounded-full h-10 lg:h-15 bg-amber-50 flex justify-center items-center">
                     <span className="text-slate-800 font-bold text-lg lg:text-2xl">{!finishedSteps.includes(i) ? `${i + 1}.` : <FontAwesomeIcon icon={faCheck} />} </span>
                   </div>
-                  <span className={`text-amber-50 text-sm md:text-lg ${finishedSteps.includes(i) ? 'line-through' : ''}`}>{step}</span>
+                  <span className={`text-amber-50 text-sm md:text-lg ${finishedSteps.includes(i) ? 'line-through' : ''}`}>{step.text}</span>
                 </div>
               </Slide>
             ))}

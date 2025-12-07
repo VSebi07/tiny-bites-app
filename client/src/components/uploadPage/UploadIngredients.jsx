@@ -27,6 +27,10 @@ const UploadIngredients = () => {
   const [servings, setServings] = useState(4);
   const units = useFetch(`${import.meta.env.VITE_API_URL}/api/unit`).data;
   const [newUnits, setNewUnits] = useState([]);
+  const [priority, setPriority] = useState(0);
+  const [categories, setCategories] = useState([]);
+  const [difficulty, setDifficulty] = useState('');
+  const [time, setTime] = useState(undefined);
 
   const findIfNew = (arr, item) => {
     let isNew = true;
@@ -44,7 +48,10 @@ const UploadIngredients = () => {
       name: name,
       quantity: q,
       unit: u,
-      part: category
+      part: {
+        name: category,
+        priority
+      }
     }]);
 
     setName('');
@@ -80,6 +87,10 @@ const UploadIngredients = () => {
   useEffect(() => {
     localStorage.setItem('ingredients', JSON.stringify(selectedIngredients));
   }, [selectedIngredients]);
+
+  useEffect(() => {
+    localStorage.setItem('servings', servings);
+  }, [servings])
 
   document.querySelector('title').textContent = 'Upload Recipe 2/3 | TinyBites';
 

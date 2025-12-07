@@ -26,6 +26,17 @@ const recipeSchema = new mongoose.Schema({
       unit: {
         type: String,
         required: true,
+      },
+      part: {
+        name: {
+          type: String,
+          required: true
+        },
+        priority: {
+          type: Number,
+          min: 0,
+          default: 0
+        }
       }
     }
   ],

@@ -45,6 +45,7 @@ const SendRecipeBtn = () => {
 
     const name = localStorage.getItem('name');
     const desc = localStorage.getItem('desc');
+    const servings = localStorage.getItem('servings');
 
     const foodParts = JSON.parse(localStorage.getItem('foodParts'));
     const ingredients = JSON.parse(localStorage.getItem('ingredients'));
@@ -65,6 +66,7 @@ const SendRecipeBtn = () => {
         ingredients,
         steps,
         image: null,
+        servings,
         categories: ['italy', 'vegetables'],   //! átírni
       })
     })

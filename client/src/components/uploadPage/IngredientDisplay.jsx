@@ -9,7 +9,7 @@ const IngredientDisplay = ({foodParts, setFoodParts, selectedIngredients, setSel
   const deleteFoodPart = (item) => {
     if (confirm('Are you sure you want to delete the entire foodpart? It will remove all ingredients belonging to it! (If not, you can still rename the part and keep the ingredients.)')){
       setFoodParts(items => items.filter(i => i !== item));
-      setSelectedIngredients(items => items.filter(i => i.part !== item));
+      setSelectedIngredients(items => items.filter(i => i.part.name !== item));
       setCurrentFoodPart('New Food Part');
       setCategory('New Food Part');
     }
@@ -29,8 +29,8 @@ const IngredientDisplay = ({foodParts, setFoodParts, selectedIngredients, setSel
 
       let is = selectedIngredients;
       is.forEach(i => {
-        if (i.part === item) {
-          i.part = newName;
+        if (i.part.name === item) {
+          i.part.name = newName;
           console.log(i);
           
         }
@@ -52,7 +52,7 @@ const IngredientDisplay = ({foodParts, setFoodParts, selectedIngredients, setSel
             onClick={() => renameFoodPart(f)}
             />
           </div>
-          {selectedIngredients.filter(i => i.part == f).map((i) => (
+          {selectedIngredients.filter(i => i.part.name == f).map((i) => (
             <p 
             className='text-md hover:bg-rose-700 px-2 py-0.5 rounded-md cursor-pointer transition-all duration-200'
             onClick={() => deleteItem(i)}>{i.name} {i.quantity} {i.unit}</p>

@@ -11,6 +11,8 @@ const RecipeIngredients = ({currentRecipe, currentServings}) => {
   });
 
   const orderedParts = Object.entries(partsI).sort((a, b) => a[1][0] - b[1][0]);
+  console.log(orderedParts);
+  
 
   return (  
     <div id="ingredients" className="flex lg:overflow-auto lg:max-h-150">
@@ -20,7 +22,7 @@ const RecipeIngredients = ({currentRecipe, currentServings}) => {
           <div>
             <span>{op[0]}</span>
             {op[1].splice(1).map(ig => (
-              <OneIngredient ig={ig} servings={Math.round(currentServings / currentRecipe.servings * ig.qua)}/>
+              <OneIngredient ig={ig} servings={Math.round(currentServings / currentRecipe.servings * ig.quantity)}/>
             ))}
           </div>
         ))}
