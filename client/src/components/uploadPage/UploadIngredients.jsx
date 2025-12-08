@@ -24,7 +24,7 @@ const UploadIngredients = () => {
   const [foodParts, setFoodParts] = useState(JSON.parse(localStorage.getItem('foodParts')) || []);
   const [currentFoodPart, setCurrentFoodPart] = useState('New Food Part');
   const [category, setCategory] = useState('');
-  const [servings, setServings] = useState(4);
+  const [servings, setServings] = useState(localStorage.getItem('servings') || 4);
   const units = useFetch(`${import.meta.env.VITE_API_URL}/api/unit`).data;
   const [newUnits, setNewUnits] = useState([]);
   const [priority, setPriority] = useState(0);

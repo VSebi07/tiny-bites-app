@@ -87,7 +87,7 @@ const SendRecipeBtn = () => {
         .then(path => {
           console.log(path);
           
-          recipe.image = path.path;
+          recipe.image = path.imageUrl;
 
           fetch(`${import.meta.env.VITE_API_URL}/api/recipes/${recipe._id}`, {
           method: 'PATCH',
@@ -100,13 +100,10 @@ const SendRecipeBtn = () => {
         .then(data => console.log(data))
         .catch(err => console.error(err));
 
-
         })
         .catch(err => console.error(err));
-
-        // let recipe = data;
-        // uploadImage();
       }
+
     })
     .catch(err => console.error(err));
   }
