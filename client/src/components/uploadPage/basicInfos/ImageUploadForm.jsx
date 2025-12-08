@@ -1,13 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight, faArrowRight, faBowlFood, faCircleArrowRight, faImages, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
-import ErrorContainer from "./ErrorContainer";
-import UploadCloudLineIcon from "../svg/UploadCloudLineIcon";
-import { Link } from "react-router-dom";
-import UploadTitle from "./UploadTitle";
+import UploadTitle from "../_universals/UploadTitle";
 import BasicInfos from "./BasicInfo";
 import ImageField from "./ImageField";
-import NextStep from "./NextStep";
+import NextStep from "../_universals/NextStep";
 
 const ImageUploadForm = ({db}) => { 
   const [image, setImage] = useState(null);

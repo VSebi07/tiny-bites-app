@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import PageTitle from "../components/ui/PageTitle";
-import UploadSteps from "../components/uploadPage/UploadSteps";
+import UploadSteps from "../components/uploadPage/steps/UploadSteps";
 
 const UploadRecipeThree = () => {
   return (  

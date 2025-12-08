@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import UploadIngredients from "../components/uploadPage/UploadIngredients";
+import UploadIngredients from "../components/uploadPage/ingredients/UploadIngredients";
 import PageTitle from "../components/ui/PageTitle";
 
 const UploadRecipeTwo = () => {

@@ -1,4 +1,4 @@
-import UploadCloudLineIcon from "../svg/UploadCloudLineIcon";
+import UploadCloudLineIcon from "../../svg/UploadCloudLineIcon";
 
 const ImageField = ({handleClick, image, handleImageChange, inputRef}) => {
   return (  

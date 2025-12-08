@@ -1,4 +1,4 @@
-import ImageUploadForm from "../components/uploadPage/ImageUploadForm";
+import ImageUploadForm from "../components/uploadPage/basicInfos/ImageUploadForm";
 import PageTitle from "../components/ui/PageTitle";
 import { motion } from "framer-motion";
 import Dexie from "dexie";

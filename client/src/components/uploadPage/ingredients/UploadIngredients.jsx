@@ -1,10 +1,10 @@
 
 import { faBacon, faCarrot, faFish, faPepperHot } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import UploadTitle from "./UploadTitle";
-import useFetch from "../../hooks/useFetch";
+import UploadTitle from "../_universals/UploadTitle";
+import useFetch from "../../../hooks/useFetch";
 import { useContext } from "react";
-import { RecipesContext } from "../../contexts/RecipeContext";
+import { RecipesContext } from "../../../contexts/RecipeContext";
 import ServingInput from "./ServingInput";
 import IngredientNameField from "./IngredientNameField";
 import QuantityInput from "./QuantityInput";
@@ -55,8 +55,12 @@ const UploadIngredients = () => {
     }]);
 
     setName('');
-    setQ('');
-    setIsCustom(false);
+
+    if (!isCustom){
+      setQ('');
+    }
+
+    // setIsCustom(false);
     setCurrentFoodPart('');
   }
 

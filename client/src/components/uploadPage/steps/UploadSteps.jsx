@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import StepInput from "./StepInput";
-import UploadTitle from "./UploadTitle";
+import UploadTitle from "../_universals/UploadTitle";
 import { faList, faPen } from "@fortawesome/free-solid-svg-icons";
 import StepFoodPartSelector from "./StepFoodPartSelector";
 import StepsDisplay from "./StepsDisplay";
-import SendRecipeBtn from "./SendRecipeBtn";
+import SendRecipeBtn from "../send/SendRecipeBtn";
 
 const UploadSteps = () => {
   const [steps, setSteps] = useState(JSON.parse(localStorage.getItem('steps')) || []);

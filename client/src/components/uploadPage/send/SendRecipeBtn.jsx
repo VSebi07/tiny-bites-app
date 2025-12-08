@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const SendRecipeBtn = () => {
 
   const [image, setImage] = useState(null);
-  const [imagePath, setImagePath] = useState('');
 
   const db = new Dexie('image');
   db.version(1).stores({
@@ -18,28 +17,10 @@ const SendRecipeBtn = () => {
         setImage(saved.file);       
       } else {
         console.log('no image saved');
-        
       }
     };
     loadImage();
   }, []);
-
-  const uploadImage = () => {
-    // if (!image) return;
-
-    const formData = new FormData();
-    formData.append('image', image);
-
-    fetch(`${import.meta.env.VITE_API_URL}/api/upload`, {
-      method: 'POST',
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      setImagePath(data);
-    })
-    .catch(err => console.error(err));
-  };
 
   const trySending = () => {
 

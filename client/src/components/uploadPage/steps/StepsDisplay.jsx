@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import swap from "../../functions/swap";
+import swap from "../../../functions/swap";
 import { useEffect, useState } from "react";
 
 const StepsDisplay = ({foodParts, steps, deleteItem, setSteps}) => { 

@@ -13,7 +13,6 @@ const RecipeIngredients = ({currentRecipe, currentServings}) => {
   const orderedParts = Object.entries(partsI).sort((a, b) => a[1][0] - b[1][0]);
   console.log(orderedParts);
   
-
   return (  
     <div id="ingredients" className="flex lg:overflow-auto lg:max-h-150">
       <div className="bg-gradient-to-br from-teal-700 to-teal-600 lg:w-80 lg:h-fit w-screen flex flex-col text-amber-50 rounded-2xl p-4 relative">
