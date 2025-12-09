@@ -21,7 +21,7 @@ const RecipeIngredients = ({currentRecipe, currentServings}) => {
           <div>
             <span>{op[0]}</span>
             {op[1].splice(1).map(ig => (
-              <OneIngredient ig={ig} servings={Math.round(currentServings / currentRecipe.servings * ig.quantity)}/>
+              <OneIngredient ig={ig} servings={Math.round(currentServings / currentRecipe.servings * ig.quantity * 10 ) / 10}/>
             ))}
           </div>
         ))}

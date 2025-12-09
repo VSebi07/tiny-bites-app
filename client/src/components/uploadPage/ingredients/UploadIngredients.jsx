@@ -14,6 +14,7 @@ import NewFoodPartField from "./NewFoodPartField";
 import SubmitBtn from "./SubmitBtn";
 import FoodPartSelector from "./FoodPartSelector";
 import IngredientDisplay from "./IngredientDisplay";
+import TimeInput from "./TimeInput";
 
 const UploadIngredients = () => {
   const [selectedIngredients, setSelectedIngredients] = useState(JSON.parse(localStorage.getItem('ingredients')) || []);
@@ -55,13 +56,11 @@ const UploadIngredients = () => {
     }]);
 
     setName('');
+    setCurrentFoodPart('');
 
     if (!isCustom){
       setQ('');
     }
-
-    // setIsCustom(false);
-    setCurrentFoodPart('');
   }
 
   const errorNoInput = () => {
@@ -102,6 +101,7 @@ const UploadIngredients = () => {
     <div className="text-amber-50 p-3 flex flex-col items-center gap-4">
       <UploadTitle icons={[faBacon, faCarrot, faFish, faPepperHot]} num={2} />
       <ServingInput servings={servings} setServings={setServings} />
+      <TimeInput />
       <div className="md:w-3/4 mt-4 flex justify-center items-center flex-col md:flex-row gap-20">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5">
