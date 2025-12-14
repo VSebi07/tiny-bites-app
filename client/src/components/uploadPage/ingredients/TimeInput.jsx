@@ -3,20 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import TimeModal from "./TimeModal";
 
-const TimeInput = () => {
+const TimeInput = ({minutes, setMinutes, hours, setHours}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleClock = () => {
     setIsOpen(o => !o);
   }
 
-  const [minutes, setMinutes] = useState(0);
-  const [hours, setHours] = useState(0);
-
   return (  
-    <>
+    <div className="flex items-center gap-3">
       <FontAwesomeIcon icon={faClock} className="cursor-pointer text-4xl" onClick={() => toggleClock()}/>
-      <TimeModal />
-    </>
+      <TimeModal isOpen={isOpen} setIsOpen={setIsOpen} hours={hours} minutes={minutes} setHours={setHours} setMinutes={setMinutes}/>
+      <span>{hours} hours and {minutes} minutes</span>
+    </div>
   );
 }
  

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import transformName from '../../functions/transformName';
+import optimizeUrl from "../../functions/optimizeImageUrl";
 
 const RecipeCard = ({ name, desc, image, id }) => {
 

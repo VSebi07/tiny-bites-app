@@ -38,7 +38,11 @@ function App() {
                   <Recipes/>
                 </CategoryProvider>
                 } />
-              <Route path="/upload/basics" element={<UploadRecipe />} />
+              <Route path="/upload/basics" element={
+                <CategoryProvider>
+                  <UploadRecipe />
+                </CategoryProvider>
+                } />
               <Route path="/upload/ingredients" element={<UploadRecipeTwo />} />
               <Route path="/upload/steps" element={<UploadRecipeThree />} />
               <Route path="/recipes/all" element={

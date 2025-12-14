@@ -35,6 +35,7 @@ const IngredientDisplay = ({foodParts, setFoodParts, selectedIngredients, setSel
           
         }
       })
+      console.log(is);
       
       setSelectedIngredients(is);
     }
@@ -46,7 +47,7 @@ const IngredientDisplay = ({foodParts, setFoodParts, selectedIngredients, setSel
         <div>
           <div className="flex justify-center items-center gap-1 mb-3">
             <h6 className="text-center text-2xl font-bold hover:bg-rose-700 px-2 py-0.5 rounded-md cursor-pointer transition-all duration-200" onClick={() => deleteFoodPart(f)}>{f}</h6>
-            <FontAwesomeIcon 
+            <FontAwesomeIcon
             icon={faPen} 
             className="cursor-pointer hover:bg-sky-700 px-2 py-2 rounded-md transition-all duration-200 text-xl"
             onClick={() => renameFoodPart(f)}

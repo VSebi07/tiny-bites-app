@@ -27,13 +27,14 @@ const SendRecipeBtn = () => {
     const name = localStorage.getItem('name');
     const desc = localStorage.getItem('desc');
     const servings = localStorage.getItem('servings');
+    const difficulty = localStorage.getItem('difficulty');
+    const minutes = localStorage.getItem('minutes');
+    const hours = localStorage.getItem('hours');
 
     const foodParts = JSON.parse(localStorage.getItem('foodParts'));
     const ingredients = JSON.parse(localStorage.getItem('ingredients'));
     const steps = JSON.parse(localStorage.getItem('steps'));
-
-    console.log(steps);
-    
+    const categories = JSON.parse(localStorage.getItem('categories'));
 
     fetch(`${import.meta.env.VITE_API_URL}/api/recipes`, {
       method: 'POST',
@@ -48,7 +49,12 @@ const SendRecipeBtn = () => {
         steps,
         image: null,
         servings,
-        categories: ['italy', 'vegetables'],   //! átírni
+        categories, 
+        difficulty,
+        time: {
+          minutes,
+          hours
+        }
       })
     })
     .then(res => res.json())

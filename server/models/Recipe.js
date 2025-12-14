@@ -67,7 +67,6 @@ const recipeSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    // required: true
   },
   categories: {
     type: [String],
@@ -80,17 +79,14 @@ const recipeSchema = new mongoose.Schema({
     required: true
   },
   time: {
-    qua: {
+    minutes: {
       type: Number,
-      // required: true,
-      min: 1
     },
-    unit: {
-      type: String,
-      // required: true
+    hours: {
+      type: Number
     }
   },
-  diff: {
+  difficulty: {
     type: String,
     // required: true
   },

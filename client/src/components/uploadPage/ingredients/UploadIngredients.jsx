@@ -15,6 +15,7 @@ import SubmitBtn from "./SubmitBtn";
 import FoodPartSelector from "./FoodPartSelector";
 import IngredientDisplay from "./IngredientDisplay";
 import TimeInput from "./TimeInput";
+import DifficultySelector from "./DifficultySelector";
 
 const UploadIngredients = () => {
   const [selectedIngredients, setSelectedIngredients] = useState(JSON.parse(localStorage.getItem('ingredients')) || []);
@@ -30,8 +31,10 @@ const UploadIngredients = () => {
   const [newUnits, setNewUnits] = useState([]);
   const [priority, setPriority] = useState(0);
   const [categories, setCategories] = useState([]);
-  const [difficulty, setDifficulty] = useState('');
-  const [time, setTime] = useState(undefined);
+  const [difficulty, setDifficulty] = useState(localStorage.getItem('difficulty') || '');
+
+  const [minutes, setMinutes] = useState(localStorage.getItem('minutes') || 30);
+  const [hours, setHours] = useState(localStorage.getItem('hours') || 0);
 
   const findIfNew = (arr, item) => {
     let isNew = true;
@@ -68,9 +71,8 @@ const UploadIngredients = () => {
   }
 
   const checkReqments = () => {
-    const areMet = (
-      category !== 'New Food Part' && (currentFoodPart === 'New Food Part' && category !== '') || (currentFoodPart !== 'New Food Part')
-    )
+    const areMet = 
+    (category !== 'New Food Part' && (currentFoodPart === 'New Food Part' && category !== '') || (currentFoodPart !== 'New Food Part'))
       && u
       && u !== 'custom'
       && q > 0
@@ -93,7 +95,19 @@ const UploadIngredients = () => {
 
   useEffect(() => {
     localStorage.setItem('servings', servings);
-  }, [servings])
+  }, [servings]);
+
+  useEffect(() => {
+    localStorage.setItem('hours', hours);
+  }, [hours]);
+
+  useEffect(() => {
+    localStorage.setItem('minutes', minutes);
+  }, [minutes]);
+
+  useEffect(() => {
+    localStorage.setItem('difficulty', difficulty);
+  }, [difficulty])
 
   document.querySelector('title').textContent = 'Upload Recipe 2/3 | TinyBites';
 
@@ -101,7 +115,10 @@ const UploadIngredients = () => {
     <div className="text-amber-50 p-3 flex flex-col items-center gap-4">
       <UploadTitle icons={[faBacon, faCarrot, faFish, faPepperHot]} num={2} />
       <ServingInput servings={servings} setServings={setServings} />
-      <TimeInput />
+      <div className="flex gap-5 items-center justify-center">
+        <TimeInput minutes={minutes} setMinutes={setMinutes} hours={hours} setHours={setHours}/>
+        <DifficultySelector difficulty={difficulty} setDifficulty={setDifficulty}/>
+      </div>
       <div className="md:w-3/4 mt-4 flex justify-center items-center flex-col md:flex-row gap-20">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5">

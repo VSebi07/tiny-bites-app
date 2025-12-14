@@ -1,4 +1,6 @@
-const BasicInfos = ({setTitle, setDesc, title, desc}) => {
+import SelectCategory from "./SelectCategory";
+
+const BasicInfos = ({setTitle, setDesc, title, desc, categories, setCategories}) => {
   return (  
     <div className="w-10/12 md:w-1/4 flex flex-col gap-3 mb-10">
       <input 
@@ -19,7 +21,9 @@ const BasicInfos = ({setTitle, setDesc, title, desc}) => {
         }}
         className="outline-0 rounded-2xl h-30 p-3 bg-slate-800 placeholder:text-amber-50/40"
       />
+      <SelectCategory selectedCategories={categories} setSelectedCategories={setCategories}/>
     </div>
+
   );
 }
  
