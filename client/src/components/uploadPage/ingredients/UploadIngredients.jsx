@@ -27,14 +27,35 @@ const UploadIngredients = () => {
   const [currentFoodPart, setCurrentFoodPart] = useState('New Food Part');
   const [category, setCategory] = useState('');
   const [servings, setServings] = useState(localStorage.getItem('servings') || 4);
-  const units = useFetch(`${import.meta.env.VITE_API_URL}/api/unit`).data;
-  const [newUnits, setNewUnits] = useState([]);
   const [priority, setPriority] = useState(0);
-  const [categories, setCategories] = useState([]);
   const [difficulty, setDifficulty] = useState(localStorage.getItem('difficulty') || '');
-
   const [minutes, setMinutes] = useState(localStorage.getItem('minutes') || 30);
   const [hours, setHours] = useState(localStorage.getItem('hours') || 0);
+  // const units = useFetch(`${import.meta.env.VITE_API_URL}/api/unit`).data;
+  // console.log(units);
+
+  class Unit{
+    constructor(type, name){
+      this.type = type;
+      this.name = name;
+    }
+  }
+  
+  const units = [
+    new Unit("spoon", "teaspoon"),
+    new Unit("spoon", "tablespoon"),
+    new Unit("box", "box"),
+    new Unit("box", "pack"),
+    new Unit("weight", "g"),
+    new Unit("weight", "dkg"),
+    new Unit("weight", "kg"),
+    new Unit("weight", "pound"),
+    new Unit("volume", "ml"),
+    new Unit("volume", "dl"),
+    new Unit("volume", "l"),
+    new Unit("other", "cup"),
+    new Unit("other", "piece")
+  ];
 
   const findIfNew = (arr, item) => {
     let isNew = true;
